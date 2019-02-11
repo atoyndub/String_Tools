@@ -6287,7 +6287,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_ContainsTerm(ValidationWord &termToFind,
+	bool validateNode_ContainsTerm(ValidationWord &termToFind,
 		UniformNode<Word> *&wordNodeToTest, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6330,7 +6330,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_MatchesTerm(ValidationWord &termToMatch,
+	bool validateNode_MatchesTerm(ValidationWord &termToMatch,
 		UniformNode<Word> *&wordNodeToTest, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6373,7 +6373,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_Whitespace(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_Whitespace(UniformNode<Word> *&wordNodeToTest,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -6410,12 +6410,12 @@ public:
 
 	}
 
-	//first tests whether wordNodeToTest matches ALPHANUMERIC_VARIABLE; if so and if iterate is
+	//first tests whether wordNodeToTest matches alphanumeric syntax; if so and if iterate is
 	//true, then iterates wordNodeToTest; if so and if ensureNonTerminal is true, then
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise;
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_AlphaNumeric(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_AlphaNumeric(UniformNode<Word> *&wordNodeToTest,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -6452,12 +6452,12 @@ public:
 
 	}
 
-	//first tests whether wordNodeToTest matches ALPHANUMERIC_VARIABLE_INDEXED; if so
+	//first tests whether wordNodeToTest matches indexed alphanumeric syntax; if so
 	//and if iterate is true, then iterates wordNodeToTest; if so and if ensureNonTerminal
 	//is true, then tests to ensure wordNodeToTest != NULL; returns true if conditions
 	//are met as defined by parameter values, false otherwise;
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_IndexedAlphaNumericVariable(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_IndexedAlphaNumeric(UniformNode<Word> *&wordNodeToTest,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -6494,13 +6494,13 @@ public:
 
 	}
 
-	//first tests whether wordNodeToTest matches matches ALPHANUMERIC_VARIABLE;
+	//first tests whether wordNodeToTest matches matches alphanumeric syntax;
 	//if so then sets returnVariable to wordNodeToTest->content; if iterate is true,
 	//then iterates wordNodeToTest; if so and if ensureNonTerminal is true, then
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_CaptureAlphaNumeric(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_CaptureAlphaNumeric(UniformNode<Word> *&wordNodeToTest,
 		Word &returnVariable, const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -6539,14 +6539,14 @@ public:
 
 	}
 
-	//first tests whether wordNodeToTest matches ALPHANUMERIC_VARIABLE_INDEXED;
+	//first tests whether wordNodeToTest matches indexed alphanumeric syntax;
 	//if so then sets returnVariable to wordNodeToTest->content; if iterate is true,
 	//then iterates wordNodeToTest; if so and if ensureNonTerminal is true, then
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values and both trims the "[#]" index portion off of returnVariable
 	//and assigns the variable index value to returnIndex; returns false otherwise;
 	//assumes wordNodeToTest != NULL and is a member of this WordGroup
-	bool validateWordNode_CaptureIndexedAlphaNumericVariable(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_CaptureIndexedAlphaNumeric(UniformNode<Word> *&wordNodeToTest,
 		Word &returnVariable, unsigned long long &returnIndex, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6620,7 +6620,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_MatchesWord(Word &wordToMatch,
+	bool validateNode_MatchesWord(Word &wordToMatch,
 		UniformNode<Word> *&wordNodeToTest, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6664,7 +6664,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_CaptureWord(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_CaptureWord(UniformNode<Word> *&wordNodeToTest,
 		Word &returnWord, const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -6706,7 +6706,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_CaptureBool(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_CaptureBool(UniformNode<Word> *&wordNodeToTest,
 		bool &returnBool, Word &falseWord, Word &trueWord,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
@@ -6780,7 +6780,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
 		unsigned char &returnUnsignedChar, const unsigned char minLimit = 0,
 		const bool maxLimitActive = false, const unsigned char maxLimit = 0,
 		const bool iterate = true, const bool ensureNonTerminal = true)
@@ -6840,7 +6840,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
 		unsigned char &returnUnsignedChar, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6887,7 +6887,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
 		unsigned short &returnUnsignedShort, const unsigned short minLimit = 0,
 		const bool maxLimitActive = false, const unsigned short maxLimit = 0,
 		const bool iterate = true, const bool ensureNonTerminal = true)
@@ -6947,7 +6947,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
 		unsigned short &returnUnsignedShort, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -6994,7 +6994,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Limited(UniformNode<Word> *&wordNodeToTest,
 		unsigned long long &returnUnsignedLongLong, const unsigned long long minLimit = 0,
 		const bool maxLimitActive = false, const unsigned long long maxLimit = 0,
 		const bool iterate = true, const bool ensureNonTerminal = true)
@@ -7054,7 +7054,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_UnsignedInt_Unlimited(UniformNode<Word> *&wordNodeToTest,
 		unsigned long long &returnUnsignedLongLong, const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -7101,7 +7101,7 @@ public:
 	//tests to ensure wordNodeToTest != NULL; returns true if conditions are met as
 	//defined by parameter values, false otherwise; assumes wordNodeToTest is not NULL
 	//and is a member of this WordGroup
-	bool validateWordNode_FloatingPoint_Limited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_FloatingPoint_Limited(UniformNode<Word> *&wordNodeToTest,
 		double &returnDouble, const bool nonZero = false,
 		const bool minLimitActive = false, const double minLimit = 0.0,
 		const bool maxLimitActive = false, const double maxLimit = 0.0,
@@ -7174,7 +7174,7 @@ public:
 	//if so and if ensureNonTerminal is true, then tests to ensure wordNodeToTest != NULL;
 	//returns true if conditions are met as defined by parameter values, false otherwise;
 	//assumes wordNodeToTest is not NULL and is a member of this WordGroup
-	bool validateWordNode_FloatingPoint_Unlimited(UniformNode<Word> *&wordNodeToTest,
+	bool validateNode_FloatingPoint_Unlimited(UniformNode<Word> *&wordNodeToTest,
 		double &returndouble, const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -8260,21 +8260,6 @@ public:
 
 };
 
-class FileValidation_WordGroup : public WordGroup
-{
-
-public:
-
-	//default constructor
-	FileValidation_WordGroup() {}
-
-	//default destructor
-	~FileValidation_WordGroup() {}
-
-
-
-};
-
 class JSON_Node
 {
 
@@ -8356,7 +8341,7 @@ public:
 
 	//loads initializes this object from fileName or returns an error code along w/
 	//the errorCharIndex reference parameter to indicate where the error occurred;
-	//assumes all whitespace not embedded in strings has been removed
+	//assumes any/all whitespace not embedded in strings has been removed
 	unsigned char load_FromFile(Word &fileName, unsigned long long &errorCharIndex)
 	{
 
@@ -9009,12 +8994,12 @@ public:
 
 	}
 
-	//***validation functions used in external class initialization functions***
+	//***VALIDATION FUNCTIONS***
 
 	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
 	//is true; returns false for wrong type or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise
-	bool validateJSON_Node_Object(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_Object(BranchingNode<JSON_Node> *&nodeToTest,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -9039,7 +9024,7 @@ public:
 	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
 	//is true; returns false for wrong type, wrong name, or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise
-	bool validateJSON_Node_Object(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_Object(BranchingNode<JSON_Node> *&nodeToTest,
 		const char expectedName[], const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -9065,7 +9050,7 @@ public:
 	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
 	//is true; returns false for wrong type or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise
-	bool validateJSON_Node_Array(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_Array(BranchingNode<JSON_Node> *&nodeToTest,
 		const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -9090,7 +9075,7 @@ public:
 	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
 	//is true; returns false for wrong type, wrong name, or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise
-	bool validateJSON_Node_Array(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_Array(BranchingNode<JSON_Node> *&nodeToTest,
 		const char expectedName[], const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -9117,7 +9102,7 @@ public:
 	//is true; returns false for wrong type or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise; captures
 	//nodeToTest's value in returnWord
-	bool validateJSON_Node_String(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_String(BranchingNode<JSON_Node> *&nodeToTest,
 		Word &returnWord, const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -9145,7 +9130,7 @@ public:
 	//is true; returns false for wrong type, wrong name, or if nodeToTest has no 'next relative'
 	//when iterate and ensureNonTerminal are true, returns true otherwise; captures
 	//nodeToTest's value in returnWord
-	bool validateJSON_Node_String(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_String(BranchingNode<JSON_Node> *&nodeToTest,
 		Word &returnWord, const char expectedName[], const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -9176,7 +9161,7 @@ public:
 	//if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnDouble
-	bool validateJSON_Node_FloatingPoint_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_FloatingPoint_Limited(BranchingNode<JSON_Node> *&nodeToTest,
 		double &returnDouble, const bool nonZero = false,
 		const bool minLimitActive = false, const double minLimit = 0.0,
 		const bool maxLimitActive = false, const double maxLimit = 0.0,
@@ -9236,7 +9221,7 @@ public:
 	//if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnDouble
-	bool validateJSON_Node_FloatingPoint_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_FloatingPoint_Limited(BranchingNode<JSON_Node> *&nodeToTest,
 		double &returnDouble, const char expectedName[], const bool nonZero = false,
 		const bool minLimitActive = false, const double minLimit = 0.0,
 		const bool maxLimitActive = false, const double maxLimit = 0.0,
@@ -9294,7 +9279,7 @@ public:
 	//is true; returns false for wrong type or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnDouble
-	bool validateJSON_Node_FloatingPoint_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_FloatingPoint_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
 		double &returnDouble, const bool iterate = true, const bool ensureNonTerminal = true)
 	{
 
@@ -9324,7 +9309,7 @@ public:
 	//is true; returns false for wrong type, wrong name, or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnDouble
-	bool validateJSON_Node_FloatingPoint_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_FloatingPoint_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
 		double &returnDouble, const char expectedName[], const bool iterate = true,
 		const bool ensureNonTerminal = true)
 	{
@@ -9356,7 +9341,7 @@ public:
 	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnUnsignedChar
-	bool validateJSON_Node_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
 		unsigned char &returnUnsignedChar, const unsigned char minLimit = 0,
 		const bool maxLimitActive = false, const unsigned char maxLimit = 0,
 		const bool iterate = true, const bool ensureNonTerminal = true)
@@ -9399,7 +9384,7 @@ public:
 	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
 	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
 	//captures nodeToTest's interpreted value in returnUnsignedChar
-	bool validateJSON_Node_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
 		unsigned char &returnUnsignedChar, const char expectedName[], const unsigned char minLimit = 0,
 		const bool maxLimitActive = false, const unsigned char maxLimit = 0,
 		const bool iterate = true, const bool ensureNonTerminal = true)
@@ -9438,7 +9423,477 @@ public:
 
 	}
 
-	//***WORK FROM HERE TO CREATE MORE UNSIGNED INT LIMITED AND UNLIMITED, BOOL, AND NULL VALIDATION FUNCTIONS***
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, invalid unsigned int syntax, if interpreted
+	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedShort
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned short &returnUnsignedShort, const unsigned short minLimit = 0,
+		const bool maxLimitActive = false, const unsigned short maxLimit = 0,
+		const bool iterate = true, const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		unsigned short testValue = nodeToTest->content.get_Value().interpret_UnsignedShort();
+
+		if (testValue < minLimit)
+			return false;
+
+		if (maxLimitActive)
+		{
+
+			if (testValue > maxLimit)
+				return false;
+
+		}
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		returnUnsignedShort = testValue;
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type,, wrong name, invalid unsigned int syntax, if interpreted
+	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedShort
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned short &returnUnsignedShort, const char expectedName[], const unsigned short minLimit = 0,
+		const bool maxLimitActive = false, const unsigned short maxLimit = 0,
+		const bool iterate = true, const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || nodeToTest->content.get_Name() != expectedName
+			|| !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		unsigned char testValue = nodeToTest->content.get_Value().interpret_UnsignedShort();
+
+		if (testValue < minLimit)
+			return false;
+
+		if (maxLimitActive)
+		{
+
+			if (testValue > maxLimit)
+				return false;
+
+		}
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		returnUnsignedShort = testValue;
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, invalid unsigned int syntax, if interpreted
+	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedLongLong
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned long long &returnUnsignedLongLong, const unsigned long long minLimit = 0,
+		const bool maxLimitActive = false, const unsigned long long maxLimit = 0,
+		const bool iterate = true, const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		unsigned long long testValue = nodeToTest->content.get_Value().interpret_UnsignedLongLong();
+
+		if (testValue < minLimit)
+			return false;
+
+		if (maxLimitActive)
+		{
+
+			if (testValue > maxLimit)
+				return false;
+
+		}
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		returnUnsignedLongLong = testValue;
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type,, wrong name, invalid unsigned int syntax, if interpreted
+	//value is < minLimit, if maxLimitActive is true and interpreted value is > maxLimit, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedLongLong
+	bool validateNode_UnsignedInt_Limited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned long long &returnUnsignedLongLong, const char expectedName[], const unsigned long long minLimit = 0,
+		const bool maxLimitActive = false, const unsigned long long maxLimit = 0,
+		const bool iterate = true, const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || nodeToTest->content.get_Name() != expectedName
+			|| !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		unsigned char testValue = nodeToTest->content.get_Value().interpret_UnsignedLongLong();
+
+		if (testValue < minLimit)
+			return false;
+
+		if (maxLimitActive)
+		{
+
+			if (testValue > maxLimit)
+				return false;
+
+		}
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		returnUnsignedLongLong = testValue;
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedChar
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned char &returnUnsignedChar, const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedChar = nodeToTest->content.get_Value().interpret_UnsignedChar();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, wrong name, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedChar
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned char &returnUnsignedChar, const char expectedName[], const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || nodeToTest->content.get_Name() != expectedName
+			|| !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedChar = nodeToTest->content.get_Value().interpret_UnsignedChar();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedShort
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned short &returnUnsignedShort, const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedShort = nodeToTest->content.get_Value().interpret_UnsignedShort();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, wrong name, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedShort
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned short &returnUnsignedShort, const char expectedName[], const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || nodeToTest->content.get_Name() != expectedName
+			|| !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedShort = nodeToTest->content.get_Value().interpret_UnsignedShort();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedLongLong
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned long long &returnUnsignedLongLong, const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedLongLong = nodeToTest->content.get_Value().interpret_UnsignedLongLong();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, wrong name, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's interpreted value in returnUnsignedLongLong
+	bool validateNode_UnsignedInt_Unlimited(BranchingNode<JSON_Node> *&nodeToTest,
+		unsigned long long &returnUnsignedLongLong, const char expectedName[], const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 3 || nodeToTest->content.get_Name() != expectedName
+			|| !nodeToTest->content.get_Value().validate_UnsignedInt())
+			return false;
+
+		returnUnsignedLongLong = nodeToTest->content.get_Value().interpret_UnsignedLongLong();
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's bool value in returnBool
+	bool validateNode_Bool(BranchingNode<JSON_Node> *&nodeToTest,
+		bool &returnBool, const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 4)
+			return false;
+
+		//the value of a type 4 node is either "true" or "false"
+		//(validated when structure is loaded from file)
+		if (nodeToTest->content.get_Value() == "true")
+			returnBool = true;
+
+		else
+			returnBool = false;
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, wrong name, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	//captures nodeToTest's bool value in returnBool
+	bool validateNode_Bool(BranchingNode<JSON_Node> *&nodeToTest,
+		bool &returnBool, const char expectedName[], const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 4 || nodeToTest->content.get_Name() != expectedName)
+			return false;
+
+		//the value of a type 4 node is either "true" or "false"
+		//(validated when structure is loaded from file)
+		if (nodeToTest->content.get_Value() == "true")
+			returnBool = true;
+
+		else
+			returnBool = false;
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	bool validateNode_Null(BranchingNode<JSON_Node> *&nodeToTest,
+		const bool iterate = true, const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 5)
+			return false;
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
+
+	//assumes nodeToTest != NULL; iterates nodeToTest to 'next relative' if iterate
+	//is true; returns false for wrong type, wrong name, or if nodeToTest has
+	//no 'next relative' when iterate and ensureNonTerminal are true, returns true otherwise;
+	bool validateNode_Null(BranchingNode<JSON_Node> *&nodeToTest,
+		const char expectedName[], const bool iterate = true,
+		const bool ensureNonTerminal = true)
+	{
+
+		if (nodeToTest->content.get_Type() != 5 || nodeToTest->content.get_Name() != expectedName)
+			return false;
+
+		if (iterate)
+			nodeToTest = nodeToTest->get_NextRelative();
+
+		if (ensureNonTerminal)
+		{
+
+			if (!nodeToTest)
+				return false;
+
+		}
+
+		return true;
+
+	}
 
 };
 
